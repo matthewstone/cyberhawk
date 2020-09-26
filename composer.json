@@ -1,0 +1,18 @@
+{
+  "name": "matt-stone/skyhawk",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "matt",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "slim/slim": "4.5.0",
+    "slim/psr7": "^1",
+    "slim/twig-view": "^3.0",
+    "php-di/php-di": "6.2.3"
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skyhawk Test</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style type="text/css">
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .card {
+        margin: 10px;
+        transition: transform .5s;
+    }
+    .card:hover {
+        transform: scale(1.5);
+        z-index: 9999999;
+    }
+    .card h5 {
+        background: green;
+        color: white;
+        padding: 3px;
+    }
+    .card h5.error {
+        background: red;
+    }
+</style>
+</head>
+<body>
+<h1>Hello World!</h1>
+<div class="container">
+{% for turbine in turbines %}
+    <div class="card" style="width: 18rem;>
+        <div class="card-body">
+            <h5 class="card-title {% if turbine.errors|length > 0 %}error{%  endif %}">Turbine #{{ turbine.id }}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </body>
+{% endfor %}
+</div>
+</body>
+</html>

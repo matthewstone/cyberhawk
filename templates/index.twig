@@ -30,16 +30,22 @@
     }
 </style>
 </head>
-<body>
+<div>
 <h1>Hello World!</h1>
 <div class="container">
 {% for turbine in turbines %}
     <div class="card" style="width: 18rem;>
         <div class="card-body">
             <h5 class="card-title {% if turbine.errors|length > 0 %}error{%  endif %}">Turbine #{{ turbine.id }}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            {%  if turbine.errors|length > 0 %}
+                {% for error in turbine.errors %}
+                    <p class="card-text">{{ error.message }}</p>
+                {% endfor %}
+            {% else %}
+                <p class="card-text">No issues found with component.</p>
+            {% endif %}
         </div>
-    </body>
+    </div>
 {% endfor %}
 </div>
 </body>

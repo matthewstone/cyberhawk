@@ -29,23 +29,17 @@ $app->get('/', function ($request, $response, $args) {
         if($k === 0) { //division by 0
             continue;
         }
-        if($k % 3 == 0) {
+        if ($k % 3 == 0) {
             //echo "Has error!";
             $turbines[$k]['errors'][] = ['message' => 'coating damage'];
         }
-        if($k %5 == 0) {
+        if ($k %5 == 0) {
             $turbines[$k]['errors'][] = ['message' => 'lightning strike'];
         }
     }
     return $this->get('view')->render($response, 'index.twig', [
         'turbines' => $turbines
     ]);
-    //foreach($turbines as $turbine) {
-    //    $out = print_r($turbine, true);
-    //    $response->getBody()->write($out);
-    //}
-    //$response->getBody()->write(print_r($turbines, true));
-    //return $response;
 });
 
 $app->run();

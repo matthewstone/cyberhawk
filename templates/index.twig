@@ -30,8 +30,8 @@
     }
 </style>
 </head>
-<div>
-<h1>Hello World!</h1>
+<body>
+<h1>Cyberhawk Test</h1>
 <div class="container">
 {% for turbine in turbines %}
     <div class="card" style="width: 18rem;">
@@ -47,6 +47,31 @@
         </div>
     </div>
 {% endfor %}
+</div>
+<div class="jumbotron">
+    <h1>Notes</h1>
+    <h2>The Past</h2>
+    <p>The coding test itself was straightforward enough, modulo was all that was needed along with a test to avoid any division by zero errors. The biggest problem was how
+    to display the output in a visually friendly way that avoided screen clutter. For this I decided an approach that allowed
+    for zooming in on each item would work well, CSS3 handles this well and I believe the end result works fine.</p>
+
+    <p>Although it wasn't really required for this case, I chose a lightweight PHP framework (slim framework 4) as I like to
+    see what's available in the PHP library and framework ecosystem. For the frontend, Bootstrap was used due to its quality
+    and number of components.</p>
+
+    <h2>The Future</h2>
+    <p>For me, the most important thing to do to improve the code is to separate the turbine into it's own class, this
+    would allow for the introduction of unit testing into the codebase and would also allow for separation of business
+    logic (eg. how errors are decided) from the display logic that typically appears in a front controller</p>
+
+    <p>Moving on to the front end and something i wanted to get done for this, a fade into view on scroll for the turbines
+    would vastly improve the inevitable clutter of 100 items on screen at once. The approach i would most likely take to
+    this would be to have an api endpoint producing JSON output of paged results with the frontend doing ajax calls. This
+    would then allow for the easy introduction of new devices such as a mobile app or third party systems.</p>
+
+    <h2>The End</h2>
+    <p>Thanks for taking the time to view my application and read through my notes. The code itself can be found on my (admittedly
+    sparse) github account here: <a href="https://github.com/matthewstone/cyberhawk">https://github.com/matthewstone/cyberhawk</a></p>
 </div>
 </body>
 </html>
